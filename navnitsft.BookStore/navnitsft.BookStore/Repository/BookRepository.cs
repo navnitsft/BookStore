@@ -23,11 +23,12 @@ namespace navnitsft.BookStore.Repository
         {
             return new List<BookModel>()
             {
-                new BookModel() {Id=1, Title="MVC", Author="Ram"},
-                new BookModel() {Id=2, Title="MVC", Author="Ram"},
-                new BookModel() {Id=3, Title="C#", Author="Shyam"},
-                new BookModel() {Id=4, Title="Java", Author="Mohan"},
-                new BookModel() {Id=5, Title="Php", Author="Mohan"}
+                new BookModel() {Id=1, Title="MVC", Author="Ram", Description="This is the description from MVC book"},
+                new BookModel() {Id=2, Title="MVC", Author="Ram", Description="This is the description from MVC book"},
+                new BookModel() {Id=3, Title="C#", Author="Shyam", Description="This is the description from C# book"},
+                new BookModel() {Id=4, Title="Java", Author="Mohan", Description = "This is the description from Java book"},
+                new BookModel() {Id=5, Title="Php", Author="Mohan", Description="This is the description from Php book"},
+                new BookModel() {Id=5, Title="Azure DevOps", Author="Lakshman", Description="This is the description from Azure DevOps book"}
             };
         }
         

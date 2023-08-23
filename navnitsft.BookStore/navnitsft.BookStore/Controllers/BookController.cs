@@ -12,9 +12,11 @@ namespace navnitsft.BookStore.Controllers
         {
             _bookRepository = new BookRepository();
         }
-        public List<BookModel> GetAllBooks()
+        public ViewResult GetAllBooks()
         {
-            return _bookRepository.GetAllBooks();
+            var getAllBook = _bookRepository.GetAllBooks();
+
+            return View(getAllBook);
         }
 
         public List<BookModel> GetBook(int id)

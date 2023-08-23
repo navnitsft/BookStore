@@ -23,6 +23,16 @@ namespace navnitsft.BookStore.Controllers
             return View();
         }
 
+        public ViewResult AboutUs()
+        {
+            return View();
+        }
+
+        public ViewResult Contact()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
