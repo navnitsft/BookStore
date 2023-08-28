@@ -19,9 +19,11 @@ namespace navnitsft.BookStore.Controllers
             return View(getAllBook);
         }
 
-        public List<BookModel> GetBook(int id)
+        public ViewResult GetBook(int id)
         {
-            return _bookRepository.GetBookById(id);
+            var getBookById = _bookRepository.GetBookById(id);
+
+            return View(getBookById);
         }
 
         public List<BookModel> SearchBook(string bookName, string authorName) 
