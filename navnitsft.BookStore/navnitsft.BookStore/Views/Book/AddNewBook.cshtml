@@ -1,0 +1,52 @@
+﻿@model BookModel
+
+@{
+    ViewData["Title"] = "AddNewBook";
+}
+
+<div class="container">
+    <h4 class="h4">Add New Book</h4>
+    <div class="row">
+        <div class="col-md-12">
+
+            @if (ViewBag.IsSuccess)
+            {
+                <div class="alert alert-success alert-dismissible fade show">
+                    <strong>Congratulations!</strong> You have added new book successfully.
+                    Click <a asp-controller="Book" asp-action="GetBook" asp-route-id="@ViewBag.BookId">here</a>  for view details
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+            <div>
+                <form method="post" asp-controller="Book" asp-action="AddNewBook">
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Title">Title:</label>
+                        <input class="form-control" asp-for="Title" placeholder="" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Description">Description:</label>
+                        <textarea class="form-control" asp-for="Description" placeholder=""></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Author">Author:</label>
+                        <input class="form-control" asp-for="Author" placeholder="" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Category">Category:</label>
+                        <input class="form-control" asp-for="Category" placeholder="" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Language">Language:</label>
+                        <input class="form-control" asp-for="Language" placeholder="" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="PageCount">Total pages:</label>
+                        <input class="form-control" asp-for="PageCount" placeholder="" />
+                    </div>
+                    <input type="submit" value="Add book" class="btn btn-primary" />
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

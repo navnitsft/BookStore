@@ -1,9 +1,33 @@
-﻿using navnitsft.BookStore.Models;
+﻿using navnitsft.BookStore.Data;
+using navnitsft.BookStore.Models;
 
 namespace navnitsft.BookStore.Repository
 {
     public class BookRepository
     {
+        private readonly BookStoreContext _context = null;
+
+        public BookRepository(BookStoreContext context)
+        {
+            _context = context;
+        }
+        public int AddNewBook(BookModel model)
+        {
+            var newBook = new Books()
+            {
+                Author = model.Author,
+                Category = model.Category,
+                Description = model.Description,
+                Language = model.Language,
+                PageCount = model.PageCount,
+                Title = model.Title
+            };
+
+            _context.Books.Add(newBook);
+            _context.SaveChanges();
+
+            return newBook.Id;
+        }
         public List<BookModel> GetAllBooks()
         {
             return DataSource();
